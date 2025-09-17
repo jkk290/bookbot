@@ -17,4 +17,9 @@ def get_sorted(character_counts):
     characters_list = []
     for character in character_counts:
         characters_list.append({ "char": character, "num": character_counts[character] })
+
+    def sort_on(items):
+        return items["num"]
     
+    characters_list.sort(reverse=True, key=sort_on)
+    return characters_list
